@@ -1,0 +1,121 @@
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .animate-fade-in-delayed {
+    animation: fadeIn 0.5s ease-out 0.2s both;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .document-preview {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .document-container {
+    width: 21cm;
+    min-height: 29.7cm;
+    padding: 2.54cm;
+    margin: 1cm auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .date {
+    text-align: right;
+    margin-bottom: 3cm;
+  }
+  
+  .header {
+    margin-bottom: 2cm;
+    font-weight: bold;
+  }
+  
+  .content {
+    text-align: justify;
+  }
+  
+  .signature-section {
+    margin-top: 3cm;
+    text-align: center;
+  }
+  
+  .signature-line {
+    width: 60%;
+    margin: 0.5cm auto;
+    padding-top: 0.5cm;
+    border-top: 1px solid #000;
+  }
+  
+  .editable {
+    font-weight: bold;
+    padding: 0 2px;
+    /*border-bottom: 1px dashed #ccc;*/
+    min-width: 50px;
+    display: inline-block;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  
+  .editable:hover {
+    background: #f0f0f0;
+    cursor: text;
+  }
+  
+  .actions {
+    margin-top: 2rem;
+    text-align: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .print-button, .pdf-button {
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .print-button {
+    background: #007bff;
+  }
+  
+  .pdf-button {
+    background: #dc3545;
+  }
+  
+  button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
