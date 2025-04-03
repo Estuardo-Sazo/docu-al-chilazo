@@ -30,24 +30,23 @@
       </button>
     </div>
 
-     <!-- Mobile Menu -->
-     <div class="md:hidden transform transition-all duration-300 ease-in-out"
-     [ngClass]="{'opacity-100 translate-y-0': isMobileMenuOpen, 'opacity-0 -translate-y-full': !isMobileMenuOpen}">
-  <div class="mt-2 rounded-lg bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 shadow-xl">
-    <div class="py-2 px-3 space-y-1">
-      <ng-container *ngFor="let item of navItems">
-        <a [routerLink]="item.path"
-           routerLinkActive="bg-white/20"
-           [routerLinkActiveOptions]="{exact: item.exact}"
-           class="block px-4 py-3 rounded-md text-base font-medium text-white hover:bg-white/10 transition-colors"
-           (click)="toggleMobileMenu()">
-          {{item.label}}
-        </a>
-      </ng-container>
+    <!-- Mobile Menu -->
+    <div class="md:hidden" [class.hidden]="!isMobileMenuOpen">
+      <div class="pt-2 pb-3 space-y-1">
+        <ng-container *ngFor="let item of navItems">
+          <a [routerLink]="item.path"
+             routerLinkActive="bg-purple-700 text-white"
+             [routerLinkActiveOptions]="{exact: item.exact}"
+             [ngClass]="isScrolled ? 'text-gray-700 hover:bg-purple-50' : 'text-white hover:bg-white/10'"
+             class="block px-3 py-2 rounded-md text-base font-medium transition-colors"
+             (click)="toggleMobileMenu()">
+            {{item.label}}
+          </a>
+        </ng-container>
+      </div>
     </div>
-  </div>
-</div>
   </nav>
 </div>
+
 <!-- Spacer for fixed navbar -->
 <div class="h-16"></div>
